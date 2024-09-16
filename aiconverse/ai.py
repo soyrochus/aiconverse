@@ -9,13 +9,13 @@
 #
 # Copyright (c) 2024 Iwan van der Kleijn
 
-# aiconverse/ai.py
+from langchain_openai.chat_models.base import ChatOpenAI
+
 class AIConverse:
     def __init__(self):
-        # Initialize any necessary components for Langchain communication here
-        pass
+        # Initialize the OpenAI chat model with the asynchronous interface
+        self.llm = ChatOpenAI(model="gpt-4o") # Optionally incorporate config system - temperature=0.7,  openai_api_key=os.getenv("OPENAI_API_KEY"))
 
-    def send(self, prompt):
-        # This is where you'd integrate Langchain
-        # For now, let's return a mock response
-        return f"AI Response to: {prompt}"
+    async def send(self, prompt):
+        # Send the prompt using the asynchronous OpenAI chat model
+        return await self.llm.ainvoke(prompt)
