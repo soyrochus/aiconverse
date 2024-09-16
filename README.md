@@ -1,6 +1,3 @@
-Here's a basic `README.md` file tailored to your project, incorporating the necessary elements like project description, license, and setup instructions.
-
-
 # AIConverse
 
 AIConverse is a Python console application designed to demonstrate the power and ease of **Prompt-Driven Development**. It allows users to interact with an AI through single-prompt inputs or via an ongoing conversation using a REPL (Read-Eval-Print Loop). The project also supports customizable prompt templates and utilizes Langchain for AI communication.
