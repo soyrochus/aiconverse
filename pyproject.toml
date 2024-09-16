@@ -16,6 +16,14 @@ langchain-community = "^0.3.0"
 langchain-openai = "^0.2.0"
 load-dotenv = "^0.1.0"
 
+[tool.poetry.scripts]
+check-all = "aiconverse.run_checks:run_checks"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+mypy = "^1.11.2"
+flake8 = "^7.1.1"
+black = "^24.8.0"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,6 +1,6 @@
 # AIConverse: A Python console application to interact with an AI using Langchain.
 #
-# Project Description: This project allows users to interact with an AI either through 
+# Project Description: This project allows users to interact with an AI either through
 # single-prompt inputs or an ongoing conversation using a REPL. It includes customizable
 # prompt templates and relies on Langchain for AI communication.
 #
