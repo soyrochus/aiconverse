@@ -14,12 +14,17 @@ import argparse
 import os
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description="AI Converse Application")
-    parser.add_argument('--template', type=str, required=True, help="Path to the prompt template file.")
+    parser = argparse.ArgumentParser(
+        description="AI Converse Application",
+        prog="aiconverse",
+        epilog="Interact with an AI using single-prompt or REPL modes."
+    )
+    parser.add_argument(
+        '--template',
+        type=str,
+        default=None,  
+        help="Path to the prompt template file. Defaults to 'template.txt'."
+    )
     args = parser.parse_args()
-
-    # Validate template file path
-    if not os.path.exists(args.template):
-        raise FileNotFoundError(f"Template file '{args.template}' does not exist.")
 
     return args
