@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "aiconverse"
+version = "0.1.0"
+description = "Console application to interact with an AI either through single-prompt inputs or an ongoing conversation using a REPL"
+authors = ["Iwan van der Kleijn <iwanvanderkleijn@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+langchain = "0.2"  # Ensure Langchain is included
+#ninja = "^1.10"    # For template handling
+jinja2 = "^3.1.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
