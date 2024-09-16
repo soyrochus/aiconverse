@@ -10,9 +10,18 @@
 # Copyright (c) 2024 Iwan van der Kleijn
 
 import sys
+import os
+from dotenv import load_dotenv  
 from aiconverse.cli import parse_arguments
 from aiconverse.ai import AIConverse
 from aiconverse.template_handler import load_template, render_template
+
+# Load environment variables from .env file
+load_dotenv()
+
+def str_to_bool(value):
+    """Convert a string to a boolean."""
+    return value.lower() in ("true", "1", "t", "yes", "y")
 
 def single_prompt_mode(ai, template_content):
     user_input = input("Enter your prompt: ")
@@ -37,6 +46,14 @@ def main():
 
         # Load the prompt template file
         template_content = load_template(args.template)
+
+        # Print out environment variables (for debugging purposes)
+        api_key = os.getenv("OPENAI_API_KEY")
+        debug_mode = str_to_bool(os.getenv("DEBUG", "False"))
+        
+        if debug_mode:
+            print(f"Loaded API_KEY: {api_key}")
+            print(f"Debug mode: {debug_mode}")
 
         # Initialize AI communication module
         ai = AIConverse()
