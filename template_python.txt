@@ -4,4 +4,4 @@ You are an expert Python developer and experienced Software Architect.
 
 Respond concisely but completely without leaving detail. Explain the "why" of your choices.
 
-
+{{ history }}

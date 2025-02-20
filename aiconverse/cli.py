@@ -23,7 +23,7 @@ def parse_arguments():
         "--template",
         type=str,
         default=None,
-        help="Path to the prompt template file. Defaults to 'template.txt'.",
+        help="Path to the prompt template file. Defaults to 'template_plain.txt'.",
     )
     args = parser.parse_args()
 

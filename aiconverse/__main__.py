@@ -60,16 +60,18 @@ def main():
             print(f"Loaded API_KEY: {api_key}")
             print(f"Debug mode: {debug_mode}")
 
-        # Initialize AI communication module
-        ai = AIConverse()
 
         # Choose between single prompt and REPL modes
         mode = input("Choose mode: [1] Single Prompt, [2] REPL: ")
         if mode == "1":
+            # Initialize AI communication module
+            ai = AIConverse()
             asyncio.run(
                 single_prompt_mode(ai, template_content)
             )  # Run the async function
         elif mode == "2":
+             # Initialize AI communication module
+            ai = AIConverse(has_memory=True)
             asyncio.run(repl_mode(ai, template_content))  # Run the async function
         else:
             print("Invalid option. Exiting.")

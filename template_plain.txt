@@ -1,0 +1,5 @@
+Respond concisely but completely to the following prompt
+
+{{ user_prompt }}
+
+{{ history }}

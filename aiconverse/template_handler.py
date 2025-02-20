@@ -10,25 +10,20 @@
 # Copyright (c) 2024 Iwan van der Kleijn
 
 
+import os
 from jinja2 import Template
 
 
 def load_template(template_path):
     """Load the prompt template from the file."""
 
-    if template_path:
-
-        with open(template_path, "r") as file:
-            return file.read()
-
-    else:
-        return """You are an AI assistent. You are an expert in the topic the user requests info about.
-Respond concisely but completely without leaving detail. Explain the "why" of your choices.
-This is the user prompt:
-
-{{ user_prompt }}
-
-"""
+    if not template_path:
+        # Calculate the base path of the application.
+        base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        template_path = os.path.join(base_path, "template_plain.txt")
+    
+    with open(template_path, "r") as file:
+        return file.read()
 
 
 def render_template(template_content, variables):
