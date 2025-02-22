@@ -5,8 +5,8 @@ from langchain_openai import ChatOpenAI
 import openai
 from dotenv import load_dotenv
 from jinja2 import Template
-from langchain.llms import OpenAI
-from langchain.chains import LLMChain
+# from langchain.llms import OpenAI
+# from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
 def load_openai_key():
@@ -49,5 +49,5 @@ def get_ai_response(rendered_prompt: str) -> str:
     #chain = LLMChain(llm=llm, prompt=prompt_template)
     #response = chain.run({})
 
-    response = llm.invoke(rendered_prompt)
+    response = llm.invoke(rendered_prompt).content
     return response
